@@ -1,0 +1,2 @@
+rootProject.name='ITSchoolProject_Bulls&Cows'
+include ':app'

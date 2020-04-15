@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RulesActivity"
+    android:background="@color/colorFont">
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="140dp"
+        android:layout_height="107dp"
+        android:background="@color/colorPrimary"
+        android:onClick="onClick"
+        android:text="Return"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Правила игры"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
+
+    <TextView
+        android:id="@+id/Rules"
+        android:layout_width="420dp"
+        android:layout_height="339dp"
+        android:text="Компьютер загадывает число, длину которого задаёт игрок ( от 3 до 8 ), без повторений цифр и первой цифрой не может быть 0\nИгрок пытается угадать загаданное число.\nВ ответ игрок получает число быков и коров.\nБык - это цифра, которая есть в нашем загаданном числе и находится на той же позиции.\nКорова - это цифра, которая так же есть в нашем числе, но находится не на своём месте.\n Если игрок угадает число ( то есть количество быков равно длине числа ) за 11 или меньше попыток, то он выигрывает.\nЕсть режим с нулём в первой позиции."
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.609" />
+</androidx.constraintlayout.widget.ConstraintLayout>
