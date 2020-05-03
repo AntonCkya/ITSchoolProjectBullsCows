@@ -5,7 +5,9 @@ import androidx.core.view.MotionEventCompat;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -14,6 +16,8 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 import static android.widget.Toast.*;
 
@@ -24,7 +28,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private String Rn, Pn, HistoryText; //Правильный ответ и пользовательский ответ
     private boolean IsRight;
     private int[] BnC;
-
+    public SharedPreferences SP;
+    //комментарии не соответствуют действительности, так как недавно переделал этот класс
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
@@ -40,6 +45,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Bundle arguments = getIntent().getExtras();
+        SP = getSharedPreferences("statistics", Context.MODE_PRIVATE);
         Rn = arguments.getString("RightNum"); //Получаем из интента число
         AttText = findViewById(R.id.AttemptionsText);
         BullsText = findViewById(R.id.BullsText);
@@ -53,6 +59,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View v) {
+        SharedPreferences.Editor editor = SP.edit();
         IsRight = true;
         Pn = EditText.getText().toString(); //Получаем пользовательское число
         BullsCowsDetect BullsCowsDetect = new BullsCowsDetect(Pn, Rn); //Создаём экземпляр класса BullsCowsDetect
@@ -79,6 +86,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             Если число быков равно длине числа, то происходит победа
             Вывод тоста
              */
+            editor.putBoolean("result", true);
+            editor.putInt("highscore", att);
             Toast.makeText(getApplicationContext(), "You Win!\n" + Rn, LENGTH_SHORT).show();
             startActivity(i);
         } else if (att == 11) {
@@ -86,6 +95,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             Если попыток больше 10, то происходит поражение
             Вывод тоста
              */
+            editor.putBoolean("result", false);
+            editor.putInt("highscore", att);
             Toast.makeText(getApplicationContext(), "Game Over!\nСorrect Аnswer:" + Rn, LENGTH_SHORT).show();
             startActivity(i);
         }

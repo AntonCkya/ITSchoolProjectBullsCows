@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i = new Intent(this, RulesActivity.class);
                 startActivity( i );
                 break;
+            case R.id.button_stat:
+                i = new Intent(this, StatisticsActivity.class);
+                startActivity( i );
+                break;
         }
     }
 
