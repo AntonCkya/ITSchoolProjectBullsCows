@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RulesActivity"
-    android:background="@color/colorFont">
+    android:background="@color/NewColorBack"
+    tools:context=".RulesActivity">
 
     <Button
         android:id="@+id/button4"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="140dp"
         android:layout_height="107dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/NewColorFront"
         android:onClick="onClick"
         android:text="Return"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/NewColorFront2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.927"
@@ -30,6 +30,7 @@
         android:text="Правила игры"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="@color/NewColorFront2"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +44,7 @@
         android:layout_width="420dp"
         android:layout_height="339dp"
         android:text="Компьютер загадывает число, длину которого задаёт игрок ( от 3 до 8 ), без повторений цифр и первой цифрой не может быть 0\nИгрок пытается угадать загаданное число.\nВ ответ игрок получает число быков и коров.\nБык - это цифра, которая есть в нашем загаданном числе и находится на той же позиции.\nКорова - это цифра, которая так же есть в нашем числе, но находится не на своём месте.\n Если игрок угадает число ( то есть количество быков равно длине числа ) за 11 или меньше попыток, то он выигрывает.\nЕсть режим с нулём в первой позиции."
+        android:textColor="@color/NewColorFront2"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
