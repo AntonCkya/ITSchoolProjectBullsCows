@@ -24,23 +24,23 @@ public class TuningActivity extends AppCompatActivity implements SeekBar.OnSeekB
         //SeekBar; "ползунок"
         android.widget.SeekBar seekBar = findViewById(R.id.SeekBar);
         seekBar.setOnSeekBarChangeListener(this); //отслеживание изменений SeekBar
-        TextView.setText("4"); //дать начальное значение текстовому полю
+        TextView.setText("4 "); //дать начальное значение текстовому полю
         FZ = findViewById( R.id.FZSwitch );
     }
     //при изменении SeekBar:
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        TextView.setText( String.valueOf( seekBar.getProgress() + 3 ) ); //вставить текст
+        TextView.setText((seekBar.getProgress() + 3) + " "); //вставить текст
         TuneValue = seekBar.getProgress() + 3; //изменение значения ползунка
         //в остальных аналогично
     }
     //при начале изменения SeekBar:
     public void onStartTrackingTouch(SeekBar seekBar) {
-        TextView.setText( String.valueOf( seekBar.getProgress() + 3 ) );
+        TextView.setText((seekBar.getProgress() + 3) + " ");
         TuneValue = seekBar.getProgress() + 3;
     }
     //при окончании изменения SeekBar:
     public void onStopTrackingTouch(SeekBar seekBar) {
-        TextView.setText( String.valueOf( seekBar.getProgress() + 3 ) );
+        TextView.setText((seekBar.getProgress() + 3) + " ");
         TuneValue = seekBar.getProgress() + 3;
     }
 

@@ -52,9 +52,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         CowsText = findViewById(R.id.CowsText);
         History = findViewById(R.id.History);
         EditText = findViewById(R.id.PlayerNumEditText);
-        BullsText.setText("Bulls: " + BnC[0]);
-        CowsText.setText("Cows: " + BnC[1]);
-        AttText.setText("Attemptions: " + att);
+        BullsText.setText("Bulls: " + BnC[0] + " ");
+        CowsText.setText("Cows: " + BnC[1] + " ");
+        AttText.setText("Attemptions: " + att + " ");
         History.setText(HistoryText);
     }
     @Override
@@ -72,9 +72,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             IsRight = false;
             Toast.makeText(getApplicationContext(), "Lenght: " + Rn.length() + " !", LENGTH_SHORT).show(); //Выводим длину искомого числа
         }
-        BullsText.setText("Bulls: " + BnC[0]);
-        CowsText.setText("Cows: " + BnC[1]);
-        AttText.setText("Attemptions: " + att);
+        BullsText.setText("Bulls: " + BnC[0] + " ");
+        CowsText.setText("Cows: " + BnC[1] + " ");
+        AttText.setText("Attemptions: " + att + " ");
         if( IsRight ) {
             HistoryText = History.getText().toString() + "\n" + att + ": " + Pn + " Bulls: " + BnC[0] + " Cows: " + BnC[1];
             History.setText(HistoryText);

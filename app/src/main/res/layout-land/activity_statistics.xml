@@ -7,4 +7,94 @@
     android:background="@color/NewColorBack"
     tools:context=".StatisticsActivity">
 
+    <Button
+        android:id="@+id/button7"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="239dp"
+        android:layout_height="104dp"
+        android:background="@color/NewColorFront"
+        android:fontFamily="@font/font1"
+        android:onClick="onClick"
+        android:text="ReturN"
+        android:textColor="@color/NewColorFront2"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <TextView
+        android:id="@+id/textViewNOTOUCH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font1"
+        android:text="Statistics"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/NewColorFront2"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <TextView
+        android:id="@+id/textViewNumberWins2"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:text="Количество побед:"
+        android:textColor="@color/NewColorFront2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNumberGame2"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:text="Количество игр:"
+        android:textColor="@color/NewColorFront2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
+
+    <TextView
+        android:id="@+id/textViewC-C-Combo"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:text="Побед подряд:"
+        android:textColor="@color/NewColorFront2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
+    <TextView
+        android:id="@+id/textViewСoefficient2"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:text="Коэффициент побед:"
+        android:textColor="@color/NewColorFront2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
