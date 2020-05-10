@@ -8,7 +8,7 @@
     tools:context=".StatisticsActivity">
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/button6"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="239dp"
         android:layout_height="104dp"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <TextView
-        android:id="@+id/textViewNumberWins2"
+        android:id="@+id/textViewNumberWins"
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:text="Количество побед:"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewNumberGame2"
+        android:id="@+id/textViewNumberGame"
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:text="Количество игр:"
@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.397" />
 
     <TextView
-        android:id="@+id/textViewC-C-Combo"
+        android:id="@+id/textViewCCCombo"
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:text="Побед подряд:"
@@ -84,7 +84,7 @@
         app:layout_constraintVertical_bias="0.702" />
 
     <TextView
-        android:id="@+id/textViewСoefficient2"
+        android:id="@+id/textViewСoefficient"
         android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:text="Коэффициент побед:"

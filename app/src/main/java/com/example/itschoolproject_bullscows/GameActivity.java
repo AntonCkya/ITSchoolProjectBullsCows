@@ -87,7 +87,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             Вывод тоста
              */
             editor.putBoolean("result", true);
-            editor.putInt("highscore", att);
+            editor.putBoolean("isPlayed", true);
+            editor.apply();
             Toast.makeText(getApplicationContext(), "You Win!\n" + Rn, LENGTH_SHORT).show();
             startActivity(i);
         } else if (att == 11) {
@@ -96,7 +97,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             Вывод тоста
              */
             editor.putBoolean("result", false);
-            editor.putInt("highscore", att);
+            editor.putBoolean("isPlayed", true);
+            editor.apply();
             Toast.makeText(getApplicationContext(), "Game Over!\nСorrect Аnswer:" + Rn, LENGTH_SHORT).show();
             startActivity(i);
         }
