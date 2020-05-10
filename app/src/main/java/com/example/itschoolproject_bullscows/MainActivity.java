@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent i;
+        /*
+        Куча кейсов на кнопки в главном меню
+         */
         switch ( v.getId() ){
             case R.id.button:
                 i = new Intent(this, TuningActivity.class);

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class RulesActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -13,7 +12,8 @@ public class RulesActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules);
-        //Я не знаю что тут нужно объяснять, тупо кнопка назад в MainActivity, и при нажатии назад то же самое ЛМАО
+        //Я не знаю что тут нужно объяснять, тупо кнопка назад в MainActivity, и при нажатии назад то же самое
+        //Думаю тут мог быть код вообще излишен, но конпку лучше добавить
     }
     @Override
     public void onClick(View v) {

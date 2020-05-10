@@ -26,27 +26,27 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private EditText EditText; //Вставить текст
     private int att = 0; //Попытки
     private String Rn, Pn, HistoryText; //Правильный ответ и пользовательский ответ
-    private boolean IsRight;
-    private int[] BnC;
-    public SharedPreferences SP;
-    //комментарии не соответствуют действительности, так как недавно переделал этот класс
+    private boolean IsRight; //Проверка на правильность числа ( на длину крч )
+    private int[] BnC; //Массив с быками и коровами
+    public SharedPreferences SP; //Общие настройки ( по гугл транслейту )
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (savedInstanceState != null) {
+        if (savedInstanceState != null) { //Чтобы сохранялся прогресс при повороте экрана сохраняем некоторые параметры
             att = savedInstanceState.getInt("Att" );
             BnC = savedInstanceState.getIntArray("BullsCows" );
             HistoryText = savedInstanceState.getString("History" );
-        }else{
+        }else{ //Это значения при начале игры
             att = 0;
             BnC = new int[2];
-            BnC[0] = 0 ; BnC[1] = 0;
             HistoryText = "";
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Bundle arguments = getIntent().getExtras();
         SP = getSharedPreferences("statistics", Context.MODE_PRIVATE);
-        Rn = arguments.getString("RightNum"); //Получаем из интента число
+        assert arguments != null;
+        Rn = arguments.getString("RightNum");
         AttText = findViewById(R.id.AttemptionsText);
         BullsText = findViewById(R.id.BullsText);
         CowsText = findViewById(R.id.CowsText);
@@ -75,7 +75,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         BullsText.setText("Bulls: " + BnC[0] + " ");
         CowsText.setText("Cows: " + BnC[1] + " ");
         AttText.setText("Attemptions: " + att + " ");
-        if( IsRight ) {
+        if( IsRight ) { //Если число нормальное, то в историю закинем попытку
             HistoryText = History.getText().toString() + "\n" + att + ": " + Pn + " Bulls: " + BnC[0] + " Cows: " + BnC[1];
             History.setText(HistoryText);
         }
@@ -85,6 +85,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             /*
             Если число быков равно длине числа, то происходит победа
             Вывод тоста
+            Закитываем победу и наличие игры в целом в SP ( для статистики )
              */
             editor.putBoolean("result", true);
             editor.putBoolean("isPlayed", true);
@@ -95,6 +96,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             /*
             Если попыток больше 10, то происходит поражение
             Вывод тоста
+            Закитываем победу и наличие игры в целом в SP ( для статистики )
              */
             editor.putBoolean("result", false);
             editor.putBoolean("isPlayed", true);
@@ -105,13 +107,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+        /*
+        Тут мы сохраняем некоторые параметры для поворота экрана
+        Массив быки-коровы, попытки и историю в целом
+         */
         outState.putIntArray( "BullsCows" , BnC );
         outState.putInt( "Att" , att );
         outState.putString( "History" , HistoryText );
         super.onSaveInstanceState(outState);
     }
     @Override
-    public void onBackPressed() //Мало ли
+    public void onBackPressed() //На самом деле не нужно, но мало ли, предупреждён значит вооружён
     {
         Intent i;
         i = new Intent(this, TuningActivity.class);

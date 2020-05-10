@@ -3,9 +3,9 @@ package com.example.itschoolproject_bullscows;
 class Randomize {
     private int[] num; //массив чисел длиной nx( см. конструктор )
     private boolean x = true; //условие для окончания обработки массива
-    private boolean FirstZero = false;
+    private boolean FirstZero;
 
-    Randomize(int nx, boolean fz){ //собственно, конструктор; получаем длину массива
+    Randomize(int nx, boolean fz){ //собственно, конструктор; получаем длину массива и параметр первый_нуль
         num = new int[ nx ];
         FirstZero = fz;
     }
@@ -27,6 +27,7 @@ class Randomize {
                     /*
                     сравнение каждого элемента массива с каждым
                     если есть одинаковые или нулевой элемент равен нулю, то рандомим всё число по-новой
+                    если первый_нуль трушен, то на ноль не проверяем
                      */
                     if( FirstZero ){
                         if ( num[ i ] == num[ j ] ) {

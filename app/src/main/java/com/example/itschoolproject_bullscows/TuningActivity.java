@@ -13,7 +13,7 @@ public class TuningActivity extends AppCompatActivity implements SeekBar.OnSeekB
 
     private TextView TextView; //Выводит значение SeekBar
     private int TuneValue = 4 ; //значение ползунка
-    private Switch FZ;
+    private Switch FZ; //свич на первый_нуль
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class TuningActivity extends AppCompatActivity implements SeekBar.OnSeekB
         android.widget.SeekBar seekBar = findViewById(R.id.SeekBar);
         seekBar.setOnSeekBarChangeListener(this); //отслеживание изменений SeekBar
         TextView.setText("4 "); //дать начальное значение текстовому полю
-        FZ = findViewById( R.id.FZSwitch );
+        FZ = findViewById( R.id.FZSwitch ); //свич
     }
     //при изменении SeekBar:
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -66,5 +66,6 @@ public class TuningActivity extends AppCompatActivity implements SeekBar.OnSeekB
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        //я не знаю зачем это здесь, но мне 2 недели назад было виднее
     }
 }
